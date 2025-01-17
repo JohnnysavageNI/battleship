@@ -4,7 +4,7 @@ class Board:
         Create board class.
         Create grid using '.'.
         Place ship on board randomly.
-        Set numbe rof attempts to 5.
+        Set number of attempts to 5.
         """
         self.size = size
         self.grid = [['.' for _ in range(size)] for _ in range(size)]
@@ -18,3 +18,9 @@ class Board:
         row = random.randint(0, self.size - 1)
         col = random.randint(0, self.size - 1)
         return (row, col)
+
+    def display(self):
+        """Display the current state of the board."""
+        for row in self.grid:
+            print(" ".join(row))
+        print()
