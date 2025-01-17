@@ -25,6 +25,13 @@ class Board:
             print(" ".join(row))
         print()
 
+        def valid_guess(self, guess):
+        """Check if the player's guess is valid."""
+        if len(guess) != 2:
+            return False
+        row, col = guess
+        return 0 <= row < self.size and 0 <= col < self.size
+
 while True:
     """
     User can create grid size.
@@ -34,6 +41,8 @@ while True:
         user_size = int(user_size)
         if user_size < 2:
             raise ValueError("Grid size must be at least 2.")
-        break  # Input is valid, exit the loop
+        break  
     except ValueError:
         print("Invalid input. Please enter a number greater than or equal to 2.")
+
+board = Board(user_size)
