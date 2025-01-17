@@ -10,3 +10,11 @@ class Board:
         self.grid = [['.' for _ in range(size)] for _ in range(size)]
         self.ship = self.place_ship()
         self.attempts = 5
+
+    def place_ship(self):
+        """
+        Position ship on the board
+        """
+        row = random.randint(0, self.size - 1)
+        col = random.randint(0, self.size - 1)
+        return (row, col)
