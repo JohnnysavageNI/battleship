@@ -1,3 +1,5 @@
+import random
+
 class Board:
     def __init__(self, size):
         """
@@ -25,12 +27,25 @@ class Board:
             print(" ".join(row))
         print()
 
-        def valid_guess(self, guess):
+    def valid_guess(self, guess):
         """Check if the player's guess is valid."""
         if len(guess) != 2:
             return False
         row, col = guess
         return 0 <= row < self.size and 0 <= col < self.size
+
+    def make_guess(self, row, col):
+        """
+        Process the player's guess and update the board.
+        If the guess matches the ship's location, mark it as 'X' and return True.
+        Otherwise, mark it as '0' and return False.
+        """
+        if (row, col) == self.ship:
+            self.grid[row][col] = 'X'  
+            return True
+        else:
+            self.grid[row][col] = '0'  
+            return False
 
 while True:
     """
