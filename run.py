@@ -81,7 +81,7 @@ while board.attempts > 0:
         print("Invalid input. Please enter two numbers separated by a comma.")
         continue
 
-    if not board.is_valid_guess(guess):
+    if not board.valid_guess(guess):
         print("Invalid guess. Please try again.")
         continue
 
