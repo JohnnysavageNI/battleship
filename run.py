@@ -47,6 +47,12 @@ class Board:
             self.grid[row][col] = '0'  
             return False
 
+    def check_win(self):
+        """Check if the ship has been sunk."""
+        return self.grid[self.ship[0]][self.ship[1]] == 'X'
+
+print("Welcome to the Battleship game made with python.")
+
 while True:
     """
     User can create grid size.
