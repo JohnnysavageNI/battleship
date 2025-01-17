@@ -24,3 +24,16 @@ class Board:
         for row in self.grid:
             print(" ".join(row))
         print()
+
+while True:
+    """
+    User can create grid size.
+    """
+    user_size = input("Enter a number greater than or equal 2 to create grid.")
+    try:
+        user_size = int(user_size)
+        if user_size < 2:
+            raise ValueError("Grid size must be at least 2.")
+        break  # Input is valid, exit the loop
+    except ValueError:
+        print("Invalid input. Please enter a number greater than or equal to 2.")
