@@ -93,3 +93,6 @@ while board.attempts > 0:
         print("Miss!")
 
     board.attempts -= 1
+
+if not board.check_win():
+    print("You have run out of attempts! The ship was at:", board.ship)
