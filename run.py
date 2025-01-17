@@ -67,3 +67,29 @@ while True:
         print("Invalid input. Please enter a number greater than or equal to 2.")
 
 board = Board(user_size)
+
+while board.attempts > 0:
+    print("\nHere is the current board:")
+    board.display()
+    print(f"You have {board.attempts} attempts remaining.")
+
+    user_input = input("Enter your guess as row,col (e.g., 1,2): ")
+    try:
+        guess = user_input.split(',')
+        guess = (int(guess[0]), int(guess[1]))
+    except ValueError:
+        print("Invalid input. Please enter two numbers separated by a comma.")
+        continue
+
+    if not board.is_valid_guess(guess):
+        print("Invalid guess. Please try again.")
+        continue
+
+    row, col = guess
+    if board.make_guess(row, col):
+        print("Direct hit! You sunk my battleship!")
+        break
+    else:
+        print("Miss!")
+
+    board.attempts -= 1
