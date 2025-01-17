@@ -1,3 +1,12 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+class Board:
+    def __init__(self, size):
+        """
+        Create board class.
+        Create grid using '.'.
+        Place ship on board randomly.
+        Set numbe rof attempts to 5.
+        """
+        self.size = size
+        self.grid = [['.' for _ in range(size)] for _ in range(size)]
+        self.ship = self.place_ship()
+        self.attempts = 5
