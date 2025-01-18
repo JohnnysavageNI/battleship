@@ -57,7 +57,7 @@ while True:
     """
     User can create grid size.
     """
-    user_size = input("Enter a number greater than or equal 2 to create grid: /n")
+    user_size = input("Enter a number greater than or equal 2 to create grid: ")
     try:
         user_size = int(user_size)
         if user_size < 2:
@@ -73,7 +73,7 @@ while board.attempts > 0:
     board.display()
     print(f"You have {board.attempts} attempts remaining.")
 
-    user_input = input("Enter your guess as row,col (e.g., 1,2): /n")
+    user_input = input("Enter your guess as row,col (e.g., 1,2): ")
     try:
         guess = user_input.split(',')
         guess = (int(guess[0]), int(guess[1]))
