@@ -91,6 +91,8 @@ while board.attempts > 0:
         break
     else:
         print("Miss!")
+        if abs(row - board.ship[0]) <= 1 and abs(col - board.ship[1]) <= 1:
+            print("Hint: You're really close!")
 
     board.attempts -= 1
 
