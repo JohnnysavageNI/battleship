@@ -98,8 +98,3 @@ while board.attempts > 0:
 
 if not board.check_win():
     print("You have run out of attempts! The ship was at:", board.ship)
-
-replay = input("Would you like to play again? (y/n): ").lower()
-        if replay != 'y':
-            print("Thank you for playing Battleship!")
-            break
