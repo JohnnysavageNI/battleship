@@ -21,3 +21,9 @@ The player has 5 attempts to find the ship otherwise the game is over.
 Before starting the project I created a flowchart to plan out how everything would work. This made it easier when it came to coding as I could referring back to it to understand what I should do next and making sure everything made sense and flowed correctly.
 
 ![Image of flowchart](assets/images/flowchart.png)
+
+## Future Features
+
+ - Restart game option
+ - Increase number of attempts allowed based on grid size
+ - Allow more than one ship
