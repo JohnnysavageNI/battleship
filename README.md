@@ -27,3 +27,18 @@ Before starting the project I created a flowchart to plan out how everything wou
  - Restart game option
  - Increase number of attempts allowed based on grid size
  - Allow more than one ship
+
+## Testing
+
+Game has been testing in Chrome and Edge, both working fine.
+All potential error messages have been tested to make sure they appear (grid size and guess input).
+
+### Issues
+
+I tried to put a restart game feature in but couldn't find a way to make it work in the time I had to work on it so the idea was scrapped.
+
+### PEP8
+
+Remaining issues that need to be fixed. Nothing major but some times I maybe should have picked up on while coding.
+
+![PEP8 testing](assets/images/testing.png)
