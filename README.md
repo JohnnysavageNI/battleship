@@ -42,3 +42,13 @@ I tried to put a restart game feature in but couldn't find a way to make it work
 Remaining issues that need to be fixed. Nothing major but some times I maybe should have picked up on while coding.
 
 ![PEP8 testing](assets/images/testing.png)
+
+## Deployment
+
+This project was deployed using [Code Institute's](https://codeinstitute.net/) mock terminal for Heroku.
+
+ - Steps for deployment:
+    - Create new Heroku app
+    - Set buildbacks to Python and NodeJS in that order
+    - Link Heroku app to Github repository
+    - Deploy project
