@@ -52,3 +52,7 @@ This project was deployed using [Code Institute's](https://codeinstitute.net/) m
     - Set buildbacks to Python and NodeJS in that order
     - Link Heroku app to Github repository
     - Deploy project
+
+## Credits
+
+[Code Institute'](https://codeinstitute.net/) for deployment terminal and deployment method.
