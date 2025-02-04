@@ -73,7 +73,7 @@ while board.attempts > 0:
     board.display()
     print(f"You have {board.attempts} attempts remaining.")
 
-    user_input = input("Enter your guess as row,col (e.g., 1,2): ")
+    user_input = input(f"Enter your guess as row,col (between 0 and {user_size - 1}): ")
     try:
         guess = user_input.split(',')
         guess = (int(guess[0]), int(guess[1]))
@@ -82,7 +82,7 @@ while board.attempts > 0:
         continue
 
     if not board.valid_guess(guess):
-        print("Invalid guess. Please try again.")
+        print("Invalid guess. Please enter values between 0 and", user_size - 1)
         continue
 
     row, col = guess
