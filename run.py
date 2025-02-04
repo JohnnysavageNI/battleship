@@ -57,14 +57,14 @@ while True:
     """
     User can create grid size.
     """
-    user_size = input("Enter a number greater than or equal 2 to create grid: ")
+    user_size = input("Enter a number between 2 and 10 to create the grid: ")
     try:
         user_size = int(user_size)
-        if user_size < 2:
-            raise ValueError("Grid size must be at least 2.")
-        break  
+        if user_size < 2 or user_size > 10:
+            raise ValueError("Grid size must be between 2 and 10.") 
+        break
     except ValueError:
-        print("Invalid input. Please enter a number greater than or equal to 2.")
+        print("Invalid input. Please enter a number between 2 and 10.")
 
 board = Board(user_size)
 
