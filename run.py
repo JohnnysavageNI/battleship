@@ -74,16 +74,21 @@ while board.attempts > 0:
     print(f"You have {board.attempts} attempts remaining.")
 
     user_input = input(f"Enter your guess as row,col (between 0 and {user_size - 1}): ")
+    
+    if ',' not in user_input or len(user_input.split(',')) != 2:
+        print("Invalid format. Enter two numbers separated by a comma (e.g., 2,3).")
+        continue  # Ask again
+
     try:
         guess = user_input.split(',')
-        guess = (int(guess[0]), int(guess[1]))
+        row, col = int(guess[0].strip()), int(guess[1].strip())  # Strip spaces and convert to int
     except ValueError:
-        print("Invalid input. Please enter two numbers separated by a comma.")
-        continue
+        print("Invalid input. Enter valid numbers only.")
+        continue  # Ask again
 
-    if not board.valid_guess(guess):
-        print("Invalid guess. Please enter values between 0 and", user_size - 1)
-        continue
+    if not board.valid_guess((row, col)):
+        print(f"Invalid guess. Enter values between 0 and {user_size - 1}.")
+        continue  # Ask again
 
     row, col = guess
     if board.make_guess(row, col):
