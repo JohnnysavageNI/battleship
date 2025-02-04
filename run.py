@@ -27,7 +27,7 @@ class Board:
             print(" ".join(row))
         print()
 
-    def valid_guess(self, guess):
+    def is_valid_guess(self, guess):
         """Check if the player's guess is valid."""
         if len(guess) != 2:
             return False
@@ -77,20 +77,23 @@ while board.attempts > 0:
     
     if ',' not in user_input or len(user_input.split(',')) != 2:
         print("Invalid format. Enter two numbers separated by a comma (e.g., 2,3).")
-        continue  # Ask again
+        continue  
 
     try:
         guess = user_input.split(',')
-        row, col = int(guess[0].strip()), int(guess[1].strip())  # Strip spaces and convert to int
+    
+        if len(guess) != 2:
+            raise ValueError
+    
+        row, col = int(guess[0]), int(guess[1])
+    
+        if not board.is_valid_guess((row, col)):
+            print(f"Invalid guess. Please enter values between 0 and {user_size - 1}.")
+            continue
     except ValueError:
-        print("Invalid input. Enter valid numbers only.")
-        continue  # Ask again
+        print("Invalid input. Please enter two numbers separated by a comma (e.g., 1,2).")
+        continue
 
-    if not board.valid_guess((row, col)):
-        print(f"Invalid guess. Enter values between 0 and {user_size - 1}.")
-        continue  # Ask again
-
-    row, col = guess
     if board.make_guess(row, col):
         print("Direct hit! You sunk my battleship!")
         break
