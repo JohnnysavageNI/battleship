@@ -1,5 +1,6 @@
 import random
 
+
 class Board:
     def __init__(self, size):
         """
@@ -37,19 +38,21 @@ class Board:
     def make_guess(self, row, col):
         """
         Process the player's guess and update the board.
-        If the guess matches the ship's location, mark it as 'X' and return True.
+        If the guess matches the ship's location, mark it
+        as 'X' and return True.
         Otherwise, mark it as '0' and return False.
         """
         if (row, col) == self.ship:
-            self.grid[row][col] = 'X'  
+            self.grid[row][col] = 'X'
             return True
         else:
-            self.grid[row][col] = '0'  
+            self.grid[row][col] = '0'
             return False
 
     def check_win(self):
         """Check if the ship has been sunk."""
         return self.grid[self.ship[0]][self.ship[1]] == 'X'
+
 
 print("Welcome to the Battleship game made with python.")
 
@@ -61,7 +64,7 @@ while True:
     try:
         user_size = int(user_size)
         if user_size < 2 or user_size > 10:
-            raise ValueError("Grid size must be between 2 and 10.") 
+            raise ValueError("Grid size must be between 2 and 10.")
         break
     except ValueError:
         print("Invalid input. Please enter a number between 2 and 10.")
@@ -73,25 +76,36 @@ while board.attempts > 0:
     board.display()
     print(f"You have {board.attempts} attempts remaining.")
 
-    user_input = input(f"Enter your guess as row,col (between 0 and {user_size - 1}): ")
-    
+    user_input = input(
+        f"Enter your guess as row,col (between 0 and {user_size - 1}): \n> "
+    )
+
     if ',' not in user_input or len(user_input.split(',')) != 2:
-        print("Invalid format. Enter two numbers separated by a comma (e.g., 2,3).")
-        continue  
+        print(
+            "Invalid format. Enter two numbers\n"
+            "separated by a comma (e.g., 2,3).")
+        continue
 
     try:
         guess = user_input.split(',')
-    
+
         if len(guess) != 2:
             raise ValueError
-    
+
         row, col = int(guess[0]), int(guess[1])
-    
+
         if not board.is_valid_guess((row, col)):
-            print(f"Invalid guess. Please enter values between 0 and {user_size - 1}.")
+            print(
+                f"Invalid guess. Please enter values between 0 and\n"
+                f"0 and {user_size - 1}."
+            )
             continue
     except ValueError:
-        print("Invalid input. Please enter two numbers separated by a comma (e.g., 1,2).")
+        print(
+            "Invalid input. Please enter two numbers\n"
+            "separated by a comma (e.g., 1,2)."
+        )
+
         continue
 
     if board.make_guess(row, col):
