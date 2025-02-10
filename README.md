@@ -12,6 +12,8 @@ The game begins with the user deciding the grid size by inputting one number so 
 
 ![Screenshot of game overview](assets/images/overview-game.png)
 
+![Screenshot of grid created](assets/images/grid_created.png)
+
 The player must input 2 numbers separated by a comma and numbers must not be larger than the grid size otherwise they will get an error message.
 
 An incorrect guess will result in a message saying 'Miss!' and will also display the number of attempts left.
@@ -45,17 +47,22 @@ Before starting the project I created a flowchart to plan out how everything wou
 ## Testing
 
 Game has been testing in Chrome and Edge, both working fine.
-All potential error messages have been tested to make sure they appear (grid size and guess input).
 
-### Issues
+Tested to make sure invalid grid size won't be accepted.
 
-I tried to put a restart game feature in but couldn't find a way to make it work in the time I had to work on it so the idea was scrapped.
+![Grid size test](assets/images/grid_too_big.png)
+
+Tested to show it won't accept letters instead of numbers.
+
+![Letters test](assets/images/letters_error.png)
+
+Tested to make sure a comma is needed.
+
+![Comma test](assets/images/no_comma.png)
 
 ### PEP8
 
-Remaining issues that need to be fixed. Nothing major but some times I maybe should have picked up on while coding.
-
-![PEP8 testing](assets/images/testing.png)
+Previous iteration had errors but now all problems have been fixed and passes through PEP8 without any errors found.
 
 ## Deployment
 
