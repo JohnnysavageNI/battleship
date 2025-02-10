@@ -8,13 +8,27 @@ Users guess the location of a ship by inputting 2 numbers separated by a comma. 
 
 ## Game Play
 
-The game begins with the user deciding the grid size by inputting one number so it'll be a square grid. This can be any size as long as it's at least 2, choosing 1 will result in an error message. 
+The game begins with the user deciding the grid size by inputting one number so it'll be a square grid. This can be any size between 2 and 10, choosing any other number will result in an error message. 
+
+![Screenshot of game overview](assets/images/overview-game.png)
 
 The player must input 2 numbers separated by a comma and numbers must not be larger than the grid size otherwise they will get an error message.
 
+An incorrect guess will result in a message saying 'Miss!' and will also display the number of attempts left.
+
+![Screenshot of miss attempt](assets/images/miss.png)
+
 If the user is one number away from the ship they'll get a message saying they're really close. This will help the game be more engaging creating a sense of excitement and focus knowing they were close.
 
-The player has 5 attempts to find the ship otherwise the game is over.
+![Really close screenshot](assets/images/really_close.png)
+
+The player has 5 attempts to find the ship otherwise the game is over and the location is revealed.
+
+![Location reveal screenshot](assets/images/gameover_reveal_location.png)
+
+A correct answer will result in a message saying 'Direct hit! You sunk my battleship!
+
+![Location reveal screenshot](assets/images/game_won.png)
 
 ## Planning
 
